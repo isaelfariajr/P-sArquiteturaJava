@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Anatomia do HTML 5
+        </title>
+        <style>
+            table, th, td {
+                width:100%;
+                border: 1px solid #000; 
+            }
+        </style>
+    </head>
+    <body>
+       <h1>Trabalhando com Tabelas</h1>
+       <table>
+           <thead>
+            <!-- table row-->
+            <tr> <!-- Linha-->
+                <th>Nome</th> <!-- Coluna-->
+                <th colspan="2">Telefone</th>
+            </tr>
+            <tr> 
+                linha 2
+            </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>Isael</td>
+                   <td colspan="2">19993192486</td>
+               </tr>
+           </tbody>
+           <tfoot>c</tfoot>
+       </table>
+
+       <h2>Trabalhando com tabela, exemplo 2</h2>
+       <table>
+           <tr>
+               <th>Nome:</th>
+               <td>Isael Faria Junior</td>
+           </tr>
+           <tr>
+               <th rowspan="2">Telefone</th>
+               <th>19993192486</th>
+           </tr>
+           <tr>
+            <th>19993192486</th>
+        </tr>
+       </table>
+
+    </body>
+</html>
