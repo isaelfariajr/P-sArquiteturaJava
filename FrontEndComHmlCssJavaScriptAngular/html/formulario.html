@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            HTML 5 - Trabalhando com Formulários
+        </title>
+
+    </head>
+    <body>
+        <h1> Trabalahndo com Formulários</h1>        
+
+        <form action="">
+            <fieldset>
+                <legend>Formulário de Cadastro</legend>
+                <label for="fname">Nome :</label>
+                <input type="text" placeholder="Nome" value="" name="fnome" />
+                <br><br>
+                <label for="lname">Sobrenome :</label>
+                <input type="text" placeholder="Sobrenome" value="" name="lname" />
+                <br><br>
+                <input type="button" value="salvar">
+                <button>Outra opção de Botão Salvar</button>
+            </fieldset>
+        </form>
+
+        <hr>
+
+        <label for="estado">Escolha o seu Estado:</label>
+        <select name="estado" id="estados">
+            <option value=""> Selecione um Estado</option>
+            <option value="PR"> Paraná</option>
+            <option value="SP"> São Paulo</option>
+            <option value="MT"> Mato Grosso</option>
+            <option value="RS"> Rio Grande do Sul</option>
+            <option value="RJ"> Rio de Janeiro</option>
+        </select>
+
+        <hr>
+        <textarea name="descricao" id="descricao" cols="50" rows="5">
+        </textarea>
+        
+        <hr>
+        <button>Outra opção de Botão Salvar</button>
+
+        <hr>
+        <form action="#">
+            <input list="cidades">
+            <datalist id="cidades">
+                <option value="Maringa"></option>
+                <option value="Londrina"></option>
+                <option value="Umuarama"></option>
+                <option value="Cascavel"></option>
+                <option value="Foz do Iguaçu"></option>
+                <option value="Curitiba"></option>
+            </datalist>
+        </form>
+
+        <hr>
+        <input type="checkbox" value="ValorA"> Valor A
+        <input type="checkbox" value="ValorB"> Valor B
+        <input type="checkbox" value="ValorC"> Valor C
+        <input type="checkbox" value="ValorD"> Valor D
+
+        <hr>
+        <input type="Color">
+
+        <hr>
+        <input type="date">
+        <input type="datetime-local">
+
+        <hr>
+        <input type="email" placeholder="Seu E-mail">
+
+        <hr>
+        <input type="File">
+
+        <hr>
+        <input type="hidden" value="Procurando algum coisa ? Curioso">
+
+        <hr>
+        <input type="number">
+
+        <hr>
+        <input type="reset">
+
+        <hr>
+        <input type="search">
+
+        <hr>
+        <input type="range">
+
+        <hr>
+        <input type="tel">
+
+        <hr>
+        <input type="password">
+
+        <hr>
+        <input type="radio" name="radio" value="ValorA"> Valor A
+        <input type="radio" name="radio" value="ValorB"> Valor B
+        <input type="radio" name="radio" value="ValorC"> Valor C
+        <input type="radio" name="radio" value="ValorD"> Valor D
+
+        <hr>
+        <input type="time">
+    </body>
+</html>

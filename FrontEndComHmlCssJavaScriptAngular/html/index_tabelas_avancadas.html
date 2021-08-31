@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Anatomia do HTML 5
+        </title>
+        <style>
+            table, th, td {
+                width:100%;
+                border: 1px solid #000;  /* Define tipo da borda */
+                border-collapse: collapse; /* Remove espaçamento das bordas */
+            }
+            td,th {
+                padding: 5px; /* define o espaço do cabeçario para o texto */
+            }
+            .par { /* Criação de classe */
+                background-color: rgb(179,179,179)
+            }
+            .impar {
+                background-color: rgb(240,163,163);
+                color: white
+            }
+            #tab1 tr:nth-child(even){ /* Fazendo tratativa na tabela para mudar a linha de cor */
+                background-color: rgb(179,179,179);
+            }
+            #tab1 tr:nth-child(odd){
+                background-color: rgb(240,163,163);
+            }
+            #tab1 th{
+                background-color: rgb(7,3,3,0.611);;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>Trabalhando com Tabelas com CSS</h1>
+       <table id="tab1">
+           <thead>
+              <tr>
+                 <th>Aluno</th> 
+                 <th>1° Bimestre</th> 
+                 <th>2° Bimestre</th> 
+                 <th>3° Bimestre</th> 
+                 <th>4° Bimestre</th> 
+                 <th>Média Final</th> 
+              </tr>  
+           </thead>
+
+           <tbody>
+               <tr>
+                <td>João</td> 
+                <td>7.0</td> 
+                <td>6.0</td> 
+                <td>9.0</td> 
+                <td>8.0</td> 
+                <td>8.5</td> 
+               </tr>     
+               <tr>
+                   <td>Pedro</td>
+                   <td>6.0</td>
+                   <td>4.0</td>
+                   <td>8.0</td>
+                   <td>7.0</td>
+                   <td>7.0</td>
+               </tr>
+               <tr>
+                   <td>Maria</td>
+                   <td>9.0</td>
+                   <td>8.5</td>
+                   <td>9.5</td>
+                   <td>10.0</td>
+                   <td>9.0</td>
+               </tr> 
+               <tr>
+                   <td>Paulo</td>
+                   <td>5.0</td>
+                   <td>7.0</td>
+                   <td>8.0</td>
+                   <td>6.0</td>
+                   <td>7.0</td>
+               </tr>
+               <tr>
+                   <td>Ronaldo</td>
+                   <td>3.0</td>
+                   <td>5.0</td>
+                   <td>6.5</td>
+                   <td>6.0</td>
+                   <td>5.5</td>
+               </tr>
+               <tr>
+                <td>Cesar</td>
+                <td>8.0</td>
+                <td>7.0</td>
+                <td>8.5</td>
+                <td>5.0</td>
+                <td>8.0</td>
+            </tr>
+            <tr>
+                <td>Patricia</td>
+                <td>8.0</td>
+                <td>5.0</td>
+                <td>6.5</td>
+                <td>6.0</td>
+                <td>7.5</td>
+            </tr>               
+           </tbody>
+       </table>
+
+    </body>
+</html>
