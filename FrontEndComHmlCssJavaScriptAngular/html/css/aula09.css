@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+#box {
+    border: 3px solid red;
+    width: 250px;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+#box:hover {
+    background-color: yellow;
+    color: black;
+    font-size:  x-large;
+}
+
+#form {
+    margin: 20px 0 0 20px;
+}
+
+#form input {
+    width: 350px;
+    border: 4px solid #eee;
+    padding: 15px;
+}
+
+#form input:focus {
+    border: 4px solid #9d9b9b;
+    outline-width: 0;
+}
+
+#form input:hover {
+    border: 4px solid #c0bfbf;
+    outline-width: 0;
+}
+
+#links {
+    margin: 20px 0 0 50px;
+    border: 1px solid red;
+    width: 400px;
+    text-align: center;
+}
+/*
+.menu-links{
+    margin-left: 20px;
+}*/
+
+#links > nav {
+    margin-top: 10px;
+}
+
+.menu-links > ul li {
+    margin-bottom: 5px;
+}
+
+.menu-links > ul li a {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.menu-links > ul li a:link {
+    color: red;
+    
+}
+
+.menu-links > ul li a:visited {
+    color: green;    
+}
+
+.menu-links > ul li a:hover {
+    color: yellow;    
+}
+
+.menu-links > ul li a:active {
+    color: blue;    
+}
+
+#box-2  {
+    margin: 20px 0 0 50px;
+    border: 1px solid red;
+    width: 400px;
+    text-align: center;
+}
+
+#box-2 p {
+    display: none;
+}    
+
+#box-2 h2 {
+    cursor: pointer;
+}    
+
+#box-2:hover {
+    display: block;
+}    
+
+#box-3  {
+    margin: 20px 0 0 50px;
+    border: 1px solid red;
+    width: 500px;
+    text-align: center;
+}
+
+#box-3 p {
+    margin-bottom: 10px;
+    font-size: 13px;
+}    
+
+#box-3 p:first-child {
+    color: red;
+}   
+
+#box-3 p:first-child i {
+    color: blue;
+}   
+
+#box-3 i:first-child {
+    color: coral;
+    font-weight: bold;
+}   
+
+#box-3 p:last-child {
+    color: green;
+}   

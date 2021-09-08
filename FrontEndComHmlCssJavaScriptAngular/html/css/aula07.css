@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+  font: 2vw;
+}
+
+h2 {
+   text-align: center; 
+}
+
+p {
+   margin: 15px 0; 
+}
+
+#main {
+    margin-top: 15px;
+
+}
+
+input[type] {
+    border: 2px solid red;
+    padding: 2px;
+}
+
+input[type="text"] {
+    background-color: aqua;
+}
+
+input[type="email"] {
+    background-color: blueviolet;
+}
+
+input[type="button"] {
+    background-color: blue;
+    color: #FFF;
+    cursor:pointer;
+    font-weight: bold;
+}
+/* Quando o paragrafro inicia com */
+p[title^="Estou"] {
+    background-color: gray;
+}
+
+/* Quando o paragrafro Encerra com */
+p[title$="Javascript"] {
+    background-color: green;
+}
+
+/* Quando o paragrafro contem */
+p[title~="Java"] {
+    background-color: red;
+}

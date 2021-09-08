@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    border: 1px solid #000;
+    color: #fff;
+    background-color: black;
+    text-align: center;
+    padding: 30px;
+}
+
+#menu-links {
+    background-color: #7c7b7b;
+    font-family: 'Montserrat';
+}
+
+#menu-links ul{
+    list-style: none;
+    padding: 0;  
+}
+
+#menu-links ul.menu{
+    text-align: center;  
+}
+
+#menu-links ul li{
+    display: inline; 
+    position: relative;
+}
+
+#menu-links ul li a{
+    color: #FFF;
+    padding: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background .8s;
+}
+
+#menu-links ul li a:hover{
+    background-color: #4f4d4dd7;
+}
+/*
+#menu-links ul li:last-child a{
+    float:right;
+    background-color: #3f3e3e;
+}*/
+
+#menu-links > ul > li:nth-child(5) > a {
+    float:right;
+    background-color: #3f3e3e;
+}
+
+/* SubMenu */
+#menu-links ul ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #7c7b7b;
+    width: 150px;
+}
+
+#menu-links ul li:hover ul {
+    display: block;
+}
+
+#menu-links ul li ul a{
+    display: block;
+}

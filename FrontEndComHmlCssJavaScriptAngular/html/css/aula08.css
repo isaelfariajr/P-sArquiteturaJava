@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+  font: 2vw;
+}
+
+h2 {
+   text-align: center; 
+}
+
+#primeiraDiv {
+    margin: 10px 0;
+}
+
+#primeiraDiv p {
+    margin-bottom: 5px;
+}
+
+#divDeFora p {
+    color:blue;
+}
+
+#divDeDentro > p {
+    color: red;
+}
+
+h3 + p {
+    color:indigo;
+    text-decoration: underline;
+}
+
+p ~ h4 {
+    color: chartreuse;
+    text-decoration: underline;
+}
+
+a, li {
+    color: red;
+}
