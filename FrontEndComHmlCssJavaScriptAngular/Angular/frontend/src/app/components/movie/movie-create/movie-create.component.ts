@@ -34,7 +34,11 @@ movie: Movie = {
   genres: ""
 }
 
-  constructor(private router: Router, private movieService: MovieService, private sharedService: SharedService) { }
+  constructor(
+    private router: Router, 
+    private movieService: MovieService, 
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
   }
@@ -49,5 +53,4 @@ movie: Movie = {
   cancel(){
     this.router.navigate(["/movies"]);
   }
-
 }
