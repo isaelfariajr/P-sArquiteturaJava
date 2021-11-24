@@ -25,7 +25,7 @@ public class Tarefa {
 	@Column(name = "ds_tarefa", nullable = false, length = 150)
 	private String descricao;
     @Enumerated(EnumType.STRING)
-	private TarefasStatus status;
+	private TarefasStatus status = TarefasStatus.ABERTO;
     @FutureOrPresent(message = "{tarefa.descricao.future-or-present}") // Passa entre chave a msg que esta no arquivo message.propeties
 	private LocalDate dataEntrega;
 	private boolean visivel;

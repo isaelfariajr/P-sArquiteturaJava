@@ -1,14 +1,19 @@
 package br.com.uniciv.minhastarefas.controller;
 
+import br.com.uniciv.minhastarefas.controller.request.TarefaRequest;
+import br.com.uniciv.minhastarefas.controller.response.TarefaResponse;
 import br.com.uniciv.minhastarefas.model.Tarefa;
 import br.com.uniciv.minhastarefas.services.TarefaService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 public class TarefaController {
@@ -16,29 +21,44 @@ public class TarefaController {
     @Autowired
     private TarefaService tarefaService;
 
+    @Autowired
+    private ModelMapper mapper;
+
     @GetMapping(value = "/tarefa", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Tarefa> todasAsTarefas(@RequestParam Map<String, String> parametros) {
+    public List<TarefaResponse> todasAsTarefas(@RequestParam Map<String, String> parametros) {
+
+        List<Tarefa> tarefas = new ArrayList<>();
 
         if (parametros.isEmpty()) {
-            return tarefaService.getTodasTarefas();
+            tarefas = tarefaService.getTodasTarefas();
+        }else {
+            String descricao = parametros.get("descricao");
+            tarefas = tarefaService.getTarefasPorDescricao("%" + descricao + "%");
         }
-        String descricao = parametros.get("descricao");
+
+        return tarefas.stream().map(tarefa -> mapper.map(tarefa, TarefaResponse.class))
+                .collect(Collectors.toList());
+
         //return tarefaRepository.findByDescricao(descricao); //sem like
-        return tarefaService.getTarefasPorDescricao("%" + descricao + "%");
+
         //return tarefaRepository.findByDescricaoLike("%" + descricao + "%"); //com like
     }
 
     @GetMapping(value = "/tarefa/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Tarefa umaTarefa(@PathVariable Integer id) {
+    public TarefaResponse umaTarefa(@PathVariable Integer id) {
 
-        return tarefaService.getTarefaPorId(id);
+        return mapper.map(tarefaService
+                .getTarefaPorId(id),TarefaResponse.class);
         //return tarefaRepository.findById(id);
     }
 
     @PostMapping(value = "/tarefa", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Tarefa salvarTarefa(@Valid @RequestBody Tarefa tarefa) { //@Valid para validar os campos
+    public TarefaResponse salvarTarefa(@Valid @RequestBody TarefaRequest tarefaRequest) { //@Valid para validar os campos
 
-        return tarefaService.salvarTarefa(tarefa);
+        Tarefa tarefa = mapper.map(tarefaRequest, Tarefa.class);
+
+        return mapper.map(tarefaService
+                .salvarTarefa(tarefa), TarefaResponse.class);
         //return tarefaRepository.save(tarefa);
     }
 
