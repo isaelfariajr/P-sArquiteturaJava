@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest // Não utilizar, pois carrega todo contesto do spring
+//@SpringBootTest // Não utilizar, pois carrega todo contesto do spring
 public class TarefaServiceIntegrationTest {
-
+/*
     @Autowired
     private TarefaService tarefaService;
 
@@ -39,5 +39,5 @@ public class TarefaServiceIntegrationTest {
         tarefaService.salvarTarefa(tarefa);
 
         Assertions.assertThrows(TarefaStatusException.class, () ->   tarefaService.iniciarTarefaPorId(3));
-    }
+    }*/
 }
