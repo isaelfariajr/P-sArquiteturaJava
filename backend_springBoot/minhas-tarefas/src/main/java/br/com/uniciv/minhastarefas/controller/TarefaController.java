@@ -9,8 +9,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -67,16 +69,18 @@ public class TarefaController {
     }
 
     @PostMapping
-    public EntityModel<TarefaResponse> salvarTarefa(@Valid @RequestBody TarefaRequest tarefaRequest) { //@Valid para validar os campos
+    public ResponseEntity<EntityModel<TarefaResponse>> salvarTarefa(@Valid @RequestBody TarefaRequest tarefaRequest) { //@Valid para validar os campos
 
         Tarefa tarefa = mapper.map(tarefaRequest, Tarefa.class);
 
         /*return mapper.map(tarefaService
                 .salvarTarefa(tarefa), TarefaResponse.class);
         */
-        return tarefaModelAssembler.toModel((tarefaService
+        EntityModel<TarefaResponse> tarefaResponseEntityModel = tarefaModelAssembler.toModel((tarefaService
                 .salvarTarefa(tarefa)));
 
+        return ResponseEntity.created(tarefaResponseEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(tarefaResponseEntityModel);
         //return tarefaRepository.save(tarefa);
     }
 

@@ -9,7 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,11 +58,16 @@ public class CategoriaController {
     }
 
     @PostMapping("/categoria")
-    public EntityModel<TarefaCategoriaResponse> salvarCategoria(
+    public ResponseEntity<EntityModel<TarefaCategoriaResponse>> salvarCategoria(
             @RequestBody TarefaCategoriaRequest tarefaCategoriaRequest) {
 
-        return categoriaModelAssembler.toModel(
-                tarefaCategoriaService.salvarTarefa(modelMapper.map(tarefaCategoriaRequest, TarefaCategoria.class)));
+        TarefaCategoria tarefaCategoria
+                = tarefaCategoriaService.salvarTarefa(modelMapper.map(tarefaCategoriaRequest, TarefaCategoria.class));
+        EntityModel<TarefaCategoriaResponse> tarefaCategoriaResponseEntityModel = categoriaModelAssembler.toModel(
+                tarefaCategoria);
+
+        return ResponseEntity.created(tarefaCategoriaResponseEntityModel.getRequiredLink(IanaLinkRelations.SELF)
+                .toUri()).body(tarefaCategoriaResponseEntityModel);
         //TarefaCategoria categoria = modelMapper.map(tarefaCategoriaRequest, TarefaCategoria.class);
         //return modelMapper.map(tarefaCategoriaService.salvarTarefa(categoria), TarefaCategoriaResponse.class);
     }
