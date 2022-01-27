@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Material UI
 import { MatToolbarModule} from '@angular/material/toolbar';
@@ -19,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Components
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -34,6 +36,7 @@ import { SeriesCreateComponent } from './components/serie/series-create/series-c
 import { MovieIndexComponent } from './components/movie/movie-index/movie-index.component';
 import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
 import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component';
+import { DialogComponent } from './components/shared/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { MovieDeleteComponent } from './components/movie/movie-delete/movie-dele
     SeriesCreateComponent,
     MovieIndexComponent,
     MovieUpdateComponent,
-    MovieDeleteComponent
+    MovieDeleteComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,9 @@ import { MovieDeleteComponent } from './components/movie/movie-delete/movie-dele
     FormsModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatTableModule 
+    MatTableModule,
+    ReactiveFormsModule,
+    MatDialogModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

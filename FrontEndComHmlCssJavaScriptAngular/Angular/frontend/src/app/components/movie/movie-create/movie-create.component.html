@@ -3,21 +3,27 @@
         Filmes
     </mat-card-title>
 
-    <form>
+    <form [formGroup]="createForm" (ngSubmit)="createMovie()">
         <mat-form-field appearance="fill">
-            <input matInput placeholder="Título do filme" name="title" [(ngModel)]="movie.title">            
+            <input matInput placeholder="Título do filme" formControlName="title" [(ngModel)]="movie.title">
+           <!-- <mat-error *ngIf="createForm.get('title').errors && createForm.get('title').hasError('required')">
+                O Campo <strong>Título</strong> é obrigatorio! 
+            </mat-error>
+            <mat-error *ngIf="createForm.get('title').hasError('minength')">
+                O Campo <strong>Título</strong> deve ser maior que 4 caracteres 
+            </mat-error>-->
         </mat-form-field>    
 
         <mat-form-field appearance="fill">
-            <input matInput placeholder="Diretor(es) do filme" name="director" [(ngModel)]="movie.director">
+            <input matInput placeholder="Diretor(es) do filme" formControlName="director" [(ngModel)]="movie.director">
         </mat-form-field>    
    
         <mat-form-field appearance="fill">        
-            <input matInput placeholder="Genero do filme" name="genres" [(ngModel)]="movie.genres">
+            <input matInput placeholder="Genero do filme" formControlName="genres" [(ngModel)]="movie.genres">
         </mat-form-field>
 
         <mat-form-field appearance="fill">        
-            <input matInput placeholder="Ano do filme" name="year" [(ngModel)]="movie.year">
+            <input matInput placeholder="Ano do filme" formControlName="year" [(ngModel)]="movie.year">
         </mat-form-field>
 
         <!--
@@ -30,7 +36,7 @@
         -->
 
         <div class="btn_add_movies">
-            <button mat-flat-button color="primary" (click)="createMovie()">Salvar</button>
+            <button mat-flat-button color="primary" type="submit">Salvar</button>
             <button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
         </div>    
     </form>

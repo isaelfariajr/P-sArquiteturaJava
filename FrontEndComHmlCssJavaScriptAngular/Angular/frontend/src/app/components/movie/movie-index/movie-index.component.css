@@ -5,6 +5,7 @@
 
 .action {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .edit > i{

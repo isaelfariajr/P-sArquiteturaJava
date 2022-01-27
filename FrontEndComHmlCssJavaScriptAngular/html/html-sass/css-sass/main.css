@@ -1,0 +1,160 @@
+body {
+  background-color: #46207c;
+}
+
+.container {
+  box-shadow: 4px 4px 4px 0 #ce1717;
+  width: 200px;
+  height: 200px;
+  background-color: #FFF;
+}
+.container p {
+  box-shadow: 4px 4px 4px 0 #0d7727;
+  font-weight: bold;
+  width: 110px;
+  height: 110px;
+  color: #f37c7c;
+}
+
+p {
+  color: red;
+  color: orange;
+}
+
+.texto-1 {
+  font-size: 15px;
+}
+
+.texto-2 {
+  font-size: 30px;
+}
+
+.texto-3 {
+  font-size: 45px;
+}
+
+.texto-4 {
+  font-size: 60px;
+}
+
+.texto-5 {
+  font-size: 75px;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+/* Funcoes */
+.flex, .box5, .box4, .box3, .box2, .box1, .box0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box0 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border: 2px red solid;
+}
+.box0:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box1 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  border: 2px red solid;
+}
+.box1:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box2 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px red solid;
+}
+.box2:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box3 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  border: 2px red solid;
+}
+.box3:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box4 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border: 2px red solid;
+}
+.box4:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box5 {
+  background-color: black;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 125%;
+  left: 125%;
+  border: 2px red solid;
+}
+.box5:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.box:hover {
+  background-color: blue;
+}/*# sourceMappingURL=main.css.map */

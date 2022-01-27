@@ -1,0 +1,64 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Justice League - Snyder Cut",
+      "director": "Zack Snyder",
+      "geners": "Action",
+      "year": "2021",
+      "genres": "Ação"
+    },
+    {
+      "id": 2,
+      "title": "Kong vs GodZilla",
+      "director": "Adam Wingard",
+      "geners": "Action",
+      "year": "2021",
+      "genres": "Ação"
+    },
+    {
+      "title": "Nome do filme",
+      "director": "Nome do diretor",
+      "year": "2021",
+      "genres": "Comédia",
+      "id": 3
+    },
+    {
+      "title": "Vingadores Ultimato",
+      "director": "Anthony Russo. Joe Russo",
+      "year": "2019",
+      "genres": "Ação, Aventura e Drama",
+      "id": 4
+    },
+    {
+      "title": "Falcão e o Soldado Invernal",
+      "director": "Anthony Mackie, Sebastian Stan, Wyatt Russell",
+      "year": "2021",
+      "genres": "Aventura",
+      "id": 5
+    }
+  ],
+  "series": [
+    {
+      "id": 3,
+      "title": "Wanda Vision",
+      "director": "Jac Scheeffer",
+      "geners": "Drama",
+      "year": "2021"
+    },
+    {
+      "id": 4,
+      "title": "Stranger Things",
+      "director": "Math Duffer and Ross Duffer",
+      "geners": "Fantasy",
+      "year": "2016"
+    },
+    {
+      "id": 5,
+      "title": "Lucifer",
+      "director": "Tom Kapinos",
+      "geners": "Drama",
+      "year": "2016"
+    }
+  ]
+}

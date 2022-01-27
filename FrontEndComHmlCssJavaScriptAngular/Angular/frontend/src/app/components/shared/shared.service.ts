@@ -8,11 +8,12 @@ export class SharedService {
 
   constructor(private snackBar: MatSnackBar) {}//import
     
-  showMessage(msg: string): void {  //Criação de msg
+  showMessage(msg: string, isError: boolean = false): void {  //Criação de msg
       this.snackBar.open(msg, 'X', {
         duration: 3000,
         horizontalPosition: "right",
-        verticalPosition: "top"
+        verticalPosition: "top",
+        panelClass: isError ? ['snack-message-error'] : ['snack-message-sucess']
       })
   } 
 }

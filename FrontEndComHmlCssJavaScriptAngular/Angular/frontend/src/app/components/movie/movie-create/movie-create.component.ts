@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedService } from '../../shared/shared.service';
 import { Movie } from '../movie-model';
@@ -37,17 +38,28 @@ movie: Movie = {
   constructor(
     private router: Router, 
     private movieService: MovieService, 
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private fb: FormBuilder //Para validação de form vazio ao incluir    
   ) {}
+  
+  createForm!: FormGroup;
 
   ngOnInit(): void {
+    this.createForm = this.fb.group({ // Validação de form vazio
+      title: ["", Validators.required],
+      director: ["", Validators.required],
+      year: ["", Validators.required],
+      genres: ["", Validators.required],
+    })    
   }
 
   createMovie(): void{
-    this.movieService.create(this.movie).subscribe(() => {
-      this.sharedService.showMessage("Filme Adicionado com Sucesso");
-      this.router.navigate(["/movies"]);
-    });
+    if(this.createForm.valid){
+        this.movieService.create(this.movie).subscribe(() => {
+          this.sharedService.showMessage("Filme Adicionado com Sucesso");
+          this.router.navigate(["/movies"]);
+        });
+    }    
   }
 
   cancel(){
