@@ -64,7 +64,8 @@ public class LivroResource {
 			throw new WebApplicationException(Status.CONFLICT);
 		}	
 		//Monta uri para 201
-		URI uriLocation = UriBuilder.fromPath("livro/{isbn}").build(livro.getIsbn());
+		URI uriLocation = UriBuilder.fromPath("livro/{isbn}")
+				.build(livro.getIsbn());
 		
 		return Response.created(uriLocation).entity(livro).build();
 	}
@@ -86,7 +87,8 @@ public class LivroResource {
 			throw new WebApplicationException(Status.NOT_FOUND);
 		}	
 		//devolve codigo 200
-		return Response.ok().entity(livro).build();
+		return Response.ok().entity(livro)
+				.build();
 	}
 	
 	@DELETE

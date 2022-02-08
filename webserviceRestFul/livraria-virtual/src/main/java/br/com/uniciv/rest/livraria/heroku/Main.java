@@ -1,7 +1,15 @@
 package br.com.uniciv.rest.livraria.heroku;
 
+import java.util.Arrays;
+
+import org.eclipse.jetty.security.ConstraintMapping;
+import org.eclipse.jetty.security.ConstraintSecurityHandler;
+import org.eclipse.jetty.security.HashLoginService;
+import org.eclipse.jetty.security.authentication.BasicAuthenticator;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.util.security.Constraint;
 import org.eclipse.jetty.webapp.WebAppContext;
+
 
 /**
  * This class launches the web application in an embedded Jetty container. This is the entry point to your application. The Java
@@ -31,7 +39,29 @@ public class Main {
         final String webappDirLocation = "src/main/webapp/";
         root.setDescriptor(webappDirLocation + "/WEB-INF/web.xml");
         root.setResourceBase(webappDirLocation);
-
+        
+        //autenticação
+        HashLoginService loginService = new HashLoginService("myRealm");
+        loginService.setConfig("myrealm.properties"); //Ler arquivo
+        server.addBean(loginService);
+        
+        Constraint constraint = new Constraint();
+        constraint.setName("auth");
+        constraint.setAuthenticate(true);
+        constraint.setRoles(new String[] {"admin", "user"});
+        
+        ConstraintMapping mapping = new ConstraintMapping();
+        mapping.setPathSpec("/*");
+        mapping.setConstraint(constraint);
+        
+        ConstraintSecurityHandler security = new ConstraintSecurityHandler();
+        security.setHandler(security);
+        security.setConstraintMappings(Arrays.asList(mapping));
+        security.setAuthenticator(new BasicAuthenticator());
+        security.setLoginService(loginService);
+        
+        //FIM - Autenticaçção 	
+        
         server.setHandler(root);
 
         server.start();
